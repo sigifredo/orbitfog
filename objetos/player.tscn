@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpq62o73hs7qp"]
+
+[ext_resource type="Script" path="res://objetos/player.gd" id="1_tr1vh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0bs4a"]
+radius = 0.4
+height = 1.7
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 2
+script = ExtResource("1_tr1vh")
+speed = 10.0
+
+[node name="collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0bs4a")
+
+[node name="camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)

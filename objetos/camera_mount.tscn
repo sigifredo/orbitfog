@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cemb8uvsh4cmn"]
+
+[ext_resource type="Script" path="res://objetos/camera_mount.gd" id="1_x0iqf"]
+
+[node name="camera_mount" type="Node3D"]
+script = ExtResource("1_x0iqf")
+
+[node name="camera" type="Camera3D" parent="."]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvbqec86n03i1"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_0ff0h"]
+[ext_resource type="Script" path="res://env.gd" id="1_e5sxk"]
+[ext_resource type="PackedScene" uid="uid://dpq62o73hs7qp" path="res://objetos/player.tscn" id="3_kadcm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cflpy"]
+sky_top_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+sky_horizon_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+ground_bottom_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+ground_horizon_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+
+[sub_resource type="Sky" id="Sky_5ahnq"]
+sky_material = SubResource("ProceduralSkyMaterial_cflpy")
+
+[sub_resource type="Environment" id="Environment_pu1bt"]
+background_mode = 2
+sky = SubResource("Sky_5ahnq")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.15
+volumetric_fog_emission = Color(0.0705882, 0.0705882, 0.0705882, 1)
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_0ff0h")
+density = 50
+spawn_radius = 500.0
+
+[node name="env" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pu1bt")
+script = ExtResource("1_e5sxk")
+fog = false
+
+[node name="player" parent="." instance=ExtResource("3_kadcm")]
+collision_layer = 0
