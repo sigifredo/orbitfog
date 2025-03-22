@@ -30,7 +30,6 @@ spawn_radius = 500.0
 [node name="env" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pu1bt")
 script = ExtResource("1_e5sxk")
-fog = false
 
 [node name="player" parent="." instance=ExtResource("3_kadcm")]
 collision_layer = 0

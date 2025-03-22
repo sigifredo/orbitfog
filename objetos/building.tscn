@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctt0k3dyynebf"]
+[gd_scene load_steps=8 format=3 uid="uid://ctt0k3dyynebf"]
 
 [ext_resource type="Script" path="res://objetos/building.gd" id="1_m4oxy"]
 
@@ -24,6 +24,12 @@ top_radius = 0.1
 bottom_radius = 0.1
 height = 500.0
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_rwynh"]
+material = SubResource("StandardMaterial3D_e3udm")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 10.0
+
 [node name="building" type="StaticBody3D"]
 collision_layer = 2
 collision_mask = 0
@@ -36,18 +42,64 @@ shape = SubResource("BoxShape3D_sqbx1")
 mesh = SubResource("BoxMesh_pqt1q")
 skeleton = NodePath("../..")
 
-[node name="neon01" type="MeshInstance3D" parent="."]
+[node name="neon" type="Node3D" parent="."]
+
+[node name="neon01" type="MeshInstance3D" parent="neon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 mesh = SubResource("CylinderMesh_sxjb1")
+skeleton = NodePath("../..")
 
-[node name="neon02" type="MeshInstance3D" parent="."]
+[node name="neon02" type="MeshInstance3D" parent="neon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
 mesh = SubResource("CylinderMesh_sxjb1")
+skeleton = NodePath("../..")
 
-[node name="neon03" type="MeshInstance3D" parent="."]
+[node name="neon03" type="MeshInstance3D" parent="neon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
 mesh = SubResource("CylinderMesh_sxjb1")
+skeleton = NodePath("../..")
 
-[node name="neon04" type="MeshInstance3D" parent="."]
+[node name="neon04" type="MeshInstance3D" parent="neon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
 mesh = SubResource("CylinderMesh_sxjb1")
+skeleton = NodePath("../..")
+
+[node name="neon05" type="MeshInstance3D" parent="neon"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, 250, 0)
+mesh = SubResource("CylinderMesh_rwynh")
+skeleton = NodePath("../..")
+
+[node name="neon06" type="MeshInstance3D" parent="neon"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 250, 0)
+mesh = SubResource("CylinderMesh_rwynh")
+skeleton = NodePath("../..")
+
+[node name="neon07" type="MeshInstance3D" parent="neon"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 250, 5)
+mesh = SubResource("CylinderMesh_rwynh")
+skeleton = NodePath("../..")
+
+[node name="neon08" type="MeshInstance3D" parent="neon"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 250, -5)
+mesh = SubResource("CylinderMesh_rwynh")
+skeleton = NodePath("../..")
+
+[node name="neon09" type="MeshInstance3D" parent="neon"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, -250, 0)
+mesh = SubResource("CylinderMesh_rwynh")
+skeleton = NodePath("../..")
+
+[node name="neon10" type="MeshInstance3D" parent="neon"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, -250, 0)
+mesh = SubResource("CylinderMesh_rwynh")
+skeleton = NodePath("../..")
+
+[node name="neon11" type="MeshInstance3D" parent="neon"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -250, 5)
+mesh = SubResource("CylinderMesh_rwynh")
+skeleton = NodePath("../..")
+
+[node name="neon12" type="MeshInstance3D" parent="neon"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -250, -5)
+mesh = SubResource("CylinderMesh_rwynh")
+skeleton = NodePath("../..")

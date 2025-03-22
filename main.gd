@@ -50,7 +50,7 @@ func _update_elements(distance_start:float, distance_end:float):
 
 func _get_random_position(center:Vector3, distance_start:float, distance_end:float) -> Vector3:
 	# Generar una dirección aleatoria en 3D (vector normalizado)
-	var dir = Vector3(
+	var dir:Vector3 = Vector3(
 		randf_range(-1.0, 1.0),
 		randf_range(-1.0, 1.0),
 		randf_range(-1.0, 1.0)
