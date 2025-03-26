@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvbqec86n03i1"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_0ff0h"]
-[ext_resource type="Script" path="res://env.gd" id="1_e5sxk"]
+[ext_resource type="Script" uid="uid://3aefkj1y4w6i" path="res://main.gd" id="1_0ff0h"]
+[ext_resource type="Script" uid="uid://bocrbfoni5cnu" path="res://env.gd" id="1_e5sxk"]
 [ext_resource type="PackedScene" uid="uid://dpq62o73hs7qp" path="res://objetos/player.tscn" id="3_kadcm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cflpy"]
@@ -18,7 +18,6 @@ background_mode = 2
 sky = SubResource("Sky_5ahnq")
 tonemap_mode = 2
 glow_enabled = true
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.15
 volumetric_fog_emission = Color(0.0705882, 0.0705882, 0.0705882, 1)
 

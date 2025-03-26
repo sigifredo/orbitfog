@@ -15,7 +15,6 @@ const JUMP_VELOCITY: float = 4.5
 
 var running:bool = false
 var run_tween:Tween = null
-var pitch:float = 0.0
 
 
 func _ready() -> void:
@@ -36,14 +35,10 @@ func _input(event: InputEvent) -> void:
 		_run_tween_animation(walk_fov)
 
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion:
-		if orbit:
-			rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
-			pitch = clamp(pitch - event.relative.y * sens_vertical, -89, 89)
-			camera_mount.rotation_degrees.x = pitch
-		else:
-			rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
-			var new_pitch:float = camera_mount.rotation.x + deg_to_rad(-event.relative.y * sens_vertical)
-			camera_mount.rotation.x = clamp(new_pitch, -PI / 2.0, PI / 2.0)
+		rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
+		var new_pitch:float = camera_mount.rotation.x + deg_to_rad(-event.relative.y * sens_vertical)
+		camera_mount.rotation.x = clamp(new_pitch, -PI / 2.0, PI / 2.0)
+
 
 func _physics_process(delta: float) -> void:
 
@@ -61,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	var right:Vector3 = camera_mount.global_transform.basis.x.normalized()
 
 	if orbit:
-		var direction: Vector3 = (right * input_dir.x + forward * input_dir.y).normalized()
+		var direction:Vector3 = (right * input_dir.x + forward * input_dir.y).normalized()
 
 		if direction:
 			velocity = direction * real_speed
@@ -86,3 +81,7 @@ func _run_tween_animation(new_fov:float) -> void:
 
 	run_tween = create_tween()
 	run_tween.tween_property(camera, 'fov', new_fov, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+
+func get_look_direction() -> Vector3:
+	return -camera.global_transform.basis.z.normalized()
