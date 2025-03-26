@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctt0k3dyynebf"]
+[gd_scene load_steps=7 format=3 uid="uid://ctt0k3dyynebf"]
 
 [ext_resource type="Script" path="res://objetos/building.gd" id="1_m4oxy"]
 
@@ -6,26 +6,19 @@
 size = Vector3(10, 500, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snwx7"]
-albedo_color = Color(0, 0, 0, 1)
-uv1_triplanar = true
+metallic = 1.0
+roughness = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_pqt1q"]
 material = SubResource("StandardMaterial3D_snwx7")
 size = Vector3(10, 500, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3udm"]
-emission_enabled = true
-emission = Color(0.655089, 0.339483, 1, 1)
-emission_energy_multiplier = 10.0
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_sxjb1"]
-material = SubResource("StandardMaterial3D_e3udm")
 top_radius = 0.1
 bottom_radius = 0.1
 height = 500.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_rwynh"]
-material = SubResource("StandardMaterial3D_e3udm")
 top_radius = 0.1
 bottom_radius = 0.1
 height = 10.0

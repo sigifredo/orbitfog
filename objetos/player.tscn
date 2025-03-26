@@ -14,5 +14,12 @@ speed = 10.0
 [node name="collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_0bs4a")
 
-[node name="camera" type="Camera3D" parent="."]
+[node name="flash" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+light_energy = 0.0
+spot_angle = 18.1322
+
+[node name="camera_mount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="camera" type="Camera3D" parent="camera_mount"]

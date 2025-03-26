@@ -33,3 +33,4 @@ script = ExtResource("1_e5sxk")
 
 [node name="player" parent="." instance=ExtResource("3_kadcm")]
 collision_layer = 0
+orbit = false
